@@ -173,8 +173,8 @@
 #![doc(test(attr(deny(rust_2018_idioms, warnings))))]
 #![doc(test(attr(allow(unused_extern_crates, unused_variables))))]
 
+pub mod error;
 mod endpoint;
-mod error;
 pub mod middleware;
 mod redirect;
 mod request;

@@ -7,6 +7,16 @@ use crate::response::{IntoResponse, Response};
 /// A specialized Result type for Tide.
 pub type Result<T = Response> = std::result::Result<T, Error>;
 
+#[derive(Debug)]
+pub struct StringError(pub String);
+impl std::error::Error for StringError {}
+
+impl std::fmt::Display for StringError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::result::Result<(), std::fmt::Error> {
+        self.0.fmt(f)
+    }
+}
+
 /// A generic error.
 #[derive(Debug)]
 pub struct Error {
