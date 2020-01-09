@@ -12,7 +12,7 @@ mod into_response;
 /// An HTTP response
 #[derive(Debug)]
 pub struct Response {
-    res: http_service::Response,
+    pub(crate) res: http_service::Response,
 }
 
 impl Response {
